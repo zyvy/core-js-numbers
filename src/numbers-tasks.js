@@ -269,8 +269,17 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+// prettier-ignore
+function getFibonacciNumber(index) {
+  if (index === 0){
+    return 0;
+  }
+  let f0 = 0;
+  let f1 = 1;
+  for (let i=0; i< index-1; i+=1){
+    [f0, f1] = [f1, f0+f1];
+  }
+  return f1;
 }
 
 /**
@@ -284,8 +293,13 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+// prettier-ignore
+function getSumToN(n) {
+  let sum = 0;
+  for (let i = 1; i< n; i+=1){
+    sum+=i
+  };
+  return sum + n;
 }
 
 /**
@@ -299,9 +313,16 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+// prettier-ignore
+function getSumOfDigits(num) {
+  let summ = 0;
+  const nums = String(num).split('');
+  for (let i=0; i< nums.length; i+=1){
+    summ += +nums[i];
+  };
+  return summ;
 }
+
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
