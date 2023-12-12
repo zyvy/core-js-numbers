@@ -319,10 +319,9 @@ function getSumOfDigits(num) {
   const nums = String(num).split('');
   for (let i=0; i< nums.length; i+=1){
     summ += +nums[i];
-  };
+  }
   return summ;
 }
-
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
@@ -335,8 +334,11 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  if (num % 2 > 0 || num < 2) {
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -684,4 +686,3 @@ module.exports = {
   getHypotenuse,
   getCountOfOddNumbers,
 };
-
